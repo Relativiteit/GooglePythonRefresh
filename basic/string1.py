@@ -28,11 +28,14 @@ def donuts(count):
 
     if count < 10:
 
-        return ('Number of donuts: ${count}')
+        return ('Number of donuts: ' + str(count))
 
-    elif count > 10:
+    elif count >= 10:
 
         return ('Number of donuts: many')
+    else:
+
+        return ('Number of donuts: ' + str(count))
 
 
 # B. both_ends
