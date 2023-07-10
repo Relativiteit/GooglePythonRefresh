@@ -25,10 +25,6 @@ def verbing(s):
     else:
         return s
 
-    # +++your code here+++
-    return
-
-
 # E. not_bad
 # Given a string, find the first appearance of the
 # substring 'not' and 'bad'. If the 'bad' follows
@@ -37,9 +33,15 @@ def verbing(s):
 # Return the resulting string.
 # So 'This dinner is not that bad!' yields:
 # This dinner is good!
-def not_bad(s):
-    # +++your code here+++
-    return
+
+
+def not_bad(s: str) -> str:
+    index_not: int = s.find('not')
+    bad: str = s.find('bad')
+    new_sentence: str = 'good'
+    if bad != -1 and index_not != -1 and bad > index_not:
+        s = s[:index_not] + new_sentence + s[bad+3:]
+    return s
 
 
 # F. front_back
