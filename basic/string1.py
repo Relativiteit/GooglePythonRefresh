@@ -61,11 +61,12 @@ def both_ends(s):
 # Assume that the string is length 1 or more.
 # Hint: s.replace(stra, strb) returns a version of string s
 # where all instances of stra have been replaced by strb.
-def fix_start(s: str):
-    s.replace()
-
+def fix_start(s: str) -> str:
+    keep = s[0:1]
+    replaced = s.replace(s[0], "*")
+    result = keep + replaced[1:]
     # +++your code here+++
-    return
+    return result
 
 
 # D. MixUp
