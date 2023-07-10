@@ -51,13 +51,28 @@ def not_bad(s: str) -> str:
 # e.g. 'abcde', the front half is 'abc', the back half 'de'.
 # Given 2 strings, a and b, return a string of the form
 #  a-front + b-front + a-back + b-back
-def front_back(a, b):
-    # +++your code here+++
-    return
+def front_back(a: str, b: str):
+    # split in halves, if even len(str1) = len(str2), if odd len(str1) = len(str2) + 1
+    if len(a) % 2 == 0:
+        front_half = a[:len(a)//2]
+        back_half = a[len(a)//2:]
+    else:
+        front_half = a[:(len(a)//2) + 1]
+        back_half = a[(len(a)//2) + 1:]
 
+    if len(b) % 2 == 0:
+        front_half += b[:len(b)//2]
+        back_half += b[len(b)//2:]
+    else:
+        front_half += b[:(len(b)//2) + 1]
+        back_half += b[(len(b)//2) + 1:]
+
+    return front_half + back_half
 
 # Simple provided test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
+
+
 def test(got, expected):
     if got == expected:
         prefix = ' OK '
